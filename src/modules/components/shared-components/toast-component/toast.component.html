@@ -1,0 +1,14 @@
+<ng-container>
+  <div class="fixed w-72 top-4 right-4 space-y-4">
+    @for (msg of messageStack; track msg) {
+    <div class="bg-text-color rounded-md p-4 {{msg.type}}">
+      <div class="flex items-center justify-between">
+        <p class="font-thin text-gray-800">{{msg.title}}</p>
+        <button class="text-gray-600 text-2xl hover:text-red-500" (click)="closeToastr(msg.uid)">
+          ×
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+</ng-container>

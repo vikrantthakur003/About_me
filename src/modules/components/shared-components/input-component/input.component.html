@@ -1,0 +1,8 @@
+<!-- <input type="text" [value]="value" (input)="onInputChange($event)" placeholder="Enter text here"
+  class="form-control" /> -->
+
+<div class="material-input-container">
+  <input type="text" id="inputField" [value]="value" (input)="onInputChange($event)" placeholder="{{placeHolderText}}"
+    class="material-input" />
+  <label for="inputField" class="material-label tracking-wider">{{labelText}}</label>
+</div>

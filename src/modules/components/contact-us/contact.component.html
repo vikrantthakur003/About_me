@@ -1,0 +1,48 @@
+<div class="bg-black h-screen flex text-text-color">
+  <div class="left-section w-1/2 flex justify-center items-center">
+    <div class="flex flex-col justify-evenly h-3/5 mb-44 ml-12">
+      <h1 class="text-3xl font-bold tracking-widest">{{user.name}}</h1>
+      <h1 class="font-semibold tracking-widest">{{user.profession}}</h1>
+      <div class="w-72 font-thin">{{user.address}}</div>
+      <div class="font-thin">Ph: {{user.phoneNumber}}</div>
+      <div class="font-thin ">{{user.email}}</div>
+      <div class="flex h-16 items-center gap-4">
+        @for(item of socialMedia; track item){
+        <a href="{{item.redirect}}"> <img class="h-10" src="{{item.imageLink}}" alt=""></a>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="right-section w-1/2 flex flex-col justify-center items-center">
+    <div class="w-2/3 mt-12">
+      <h1 class="text-3xl font-bold tracking-widest">GET IN TOUCH</h1>
+      <div class="w-full mt-6">
+        <div class="pt-4">
+          <app-input [labelText]="contactForm.name.firstNameLabelText" [placeHolderText]="" [value]="userDetails.firstName"
+            (valueChange)="handleInput($event,'first-name')"></app-input>
+        </div>
+        <div class="pt-4">
+          <app-input [labelText]="contactForm.name.lastNameLabelText" [placeHolderText]="" [value]="userDetails.lastName"
+            (valueChange)="handleInput($event,'last-name')"></app-input>
+        </div>
+        <div class="pt-4">
+          <app-input [labelText]="contactForm.email.emailLabelText" [placeHolderText]="" [value]="userDetails.email"
+            (valueChange)="handleInput($event,'email')"></app-input>
+        </div>
+        <div class="pt-4">
+          <app-input [labelText]="contactForm.phone.phoneLabelText" [placeHolderText]="" [value]="userDetails.phone"
+            (valueChange)="handleInput($event,'phone')"></app-input>
+        </div>
+        <div class="pt-4">
+          <app-textarea [labelText]="contactForm.message.messageLabelText" [value]="userDetails.message"
+            (valueChange)="handleInput($event,'message')"></app-textarea>
+        </div>
+        <div class="flex justify-end">
+          <button
+            class="flex items-center rounded-sm	w-32 h-10 justify-center bg-[#e91624] text-[#030303] hover:text-text-color font-thin transition-all duration-300 ease-in-out"
+            (click)="submitDetails()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

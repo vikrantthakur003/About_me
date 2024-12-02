@@ -1,0 +1,6 @@
+
+.image-space{
+  height: 100vh;
+  background-image: url('../assets/images/background-image.jpg');
+  z-index: 1;
+}

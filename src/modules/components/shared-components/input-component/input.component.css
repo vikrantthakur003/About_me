@@ -1,0 +1,43 @@
+.material-input-container {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.material-input {
+  width: 100%;
+  padding: 12px 12px 12px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: transparent;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.material-input:focus {
+  border-color: #e91624;
+}
+
+.material-input:focus+.material-label,
+.material-input:not(:focus):not(:placeholder-shown)+.material-label {
+  top: -10px;
+  left: 12px;
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: bold;
+  transition: top 0.3s ease, font-size 0.3s ease;
+}
+
+.material-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 16px;
+  color: #aaa;
+  pointer-events: none;
+  transition: top 0.3s ease, font-size 0.3s ease;
+}
+
+.material-input:focus+.material-label {
+  color: #ffffff;
+}

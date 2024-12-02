@@ -1,0 +1,15 @@
+<div class="relative">
+  <div class="border bg-cover bg-no-repeat bg-center h-screen text-text-color flex flex-col md:flex-row justify-between px-4 md:px-10 py-4">
+    <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 justify-evenly md:w-2/5 py-2">
+      @for(item of listItem; track item){
+      <li>
+        <a href="#" class="hover:text-hover-text-color font-thin text-center md:text-left">{{item.title}}</a>
+      </li>
+      }
+    </ul>
+    <div class="flex gap-8">
+      <p class="hover:text-hover-text-color font-thin text-center md:text-left cursor-pointer" (click)="setLangauge('ENGLISH')">English</p>
+      <p class="hover:text-hover-text-color font-thin text-center md:text-left cursor-pointer" (click)="setLangauge('HINDI')">Hindi</p>
+    </div>
+  </div>
+</div>

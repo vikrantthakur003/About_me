@@ -1,0 +1,50 @@
+<div class="workout-container bg-[#030303] text-white pt-24 min-h-screen relative bg-cover bg-no-repeat bg-center">
+  <h1 class="text-4xl font-bold text-center mb-6">WHAT CAN I DO</h1>
+  <p class="text-center text-gray-300 max-w-3xl mx-auto mb-12 font-thin">
+    I am a software engineer skilled in developing user-friendly web applications. I specialize in front-end
+    technologies, creating responsive designs, and integrating APIs to deliver efficient, modern solutions. </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    @for(skill of skills; track skill){
+    <div class="workout-card flex flex-col items-center p-6 ">
+      <span class="font-black	text-[#93363e] text-8xl">
+        {{skill.id}}
+      </span>
+      <p class="text-2xl font-medium mt-4 absolute py-4">{{skill.title}}</p>
+    </div>
+    }
+  </div>
+
+  @if(skills.length >= 6){
+  <div class="flex justify-center items-center mt-8">
+    <button
+      class="flex items-center rounded-sm	w-32 h-10 justify-center bg-[#e91624] text-[#030303] hover:text-text-color font-thin transition-all duration-300 ease-in-out"
+      (click)="openModal()">View All</button>
+  </div>
+  }
+</div>
+
+
+<!-- Modal -->
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" [class.opacity-0]="!isModalOpen"
+  [class.scale-95]="!isModalOpen" [class.pointer-events-none]="!isModalOpen">
+  <div
+    class="bg-[#1e1e1e] rounded-lg p-6 w-full max-w-md text-white relative transform transition-all duration-300 ease-out"
+    [class.translate-y-10]="!isModalOpen">
+    <!-- Modal Header -->
+    <div class="flex justify-between items-center pb-4 border-b border-gray-600">
+      <h2 class="text-xl font-bold tracking-widest">Professional Toolkit</h2>
+      <button class="text-white text-4xl hover:text-red-500" (click)="closeModal()">
+        ×
+      </button>
+    </div>
+
+    <!-- Modal Content -->
+    <ul class="mt-4 space-y-4 overflow-auto h-[28rem]">
+      <li *ngFor="let skill of allSkills"
+        class="flex items-center gap-4 p-4 bg-[#2a2a2a] hover:bg-[#e91624] font-bold cursor-pointer rounded-md">
+        <p class="text-white text-lg font-thin">{{ skill.title }}</p>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.success {
+  border-inline-start: 6px solid #3BC279;
+  background-color: #C5F7DD;
+}
+
+.info {
+  border-inline-start: 6px solid #226CF4;
+  background-color: #CCE3FF;
+}
+
+.warning {
+  border-inline-start: 6px solid #E7A027;
+  background-color: #FFE8C3;
+}
+
+.error {
+  border-inline-start: 6px solid #E8594D;
+  background-color: #FFD0CB;
+}
